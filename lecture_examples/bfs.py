@@ -4,12 +4,15 @@
 # Written by Martin Mueller
 
 from collections import deque
+from typing import Dict, List, Optional, Tuple, Deque
+
+Tree = Dict[int, List[int]]
 
 # breadth-first search on tree
 # returns (found, num_nodes)
-def bfs(tree, start, treasure):
-    num_nodes = 0
-    queue = deque()
+def bfs(tree: Tree, start: int, treasure: int) -> Tuple[bool, int]:
+    num_nodes: int = 0
+    queue: Deque[int] = deque()
     queue.append(start)
     while len(queue) > 0:
         node = queue.popleft()
