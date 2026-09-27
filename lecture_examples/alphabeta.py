@@ -8,7 +8,6 @@ from game import Game
 def alphabeta(state: Game, alpha: int, beta: int) -> int:
     if state.end_of_game():
         return state.int_eval()
-    m: int = 0
     for m in state.legal_moves():
         state.play(m)
         value: int = -alphabeta(state, -beta, -alpha)

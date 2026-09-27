@@ -59,22 +59,23 @@ In `lecture_examples/quiz_extras`
 - `demere_q1_simulation.py` Quiz 1, simulation of De Mere's Game with 25 throws
 - `game21_random_dp.py` Quiz 2, 21 Game random player winning probability with dynamic programming
 
-## NOT YET Lectures 9 - 10, Minimax Search and Alphabeta
+## Lectures 9 - 10, Minimax Search and Alphabeta
 
 ### Minimax with integer values, Alphabeta algorithm
-- `minimax_sample_tree.py`, `minimax_sample_tree_data.py` artificial game tree to illustrate minimax and alphabeta
-- `naive_minimax.py`, `naive_negamax.py`, `naive_minimax_negamax_test.py` minimax and negamax without any pruning, tests on sample tree
+- `sample_tree.py`, `sample_tree_data.py` artificial game tree to illustrate minimax and alphabeta
+- `naive_minimax.py`, `naive_negamax.py`, `test_naive_minimax_negamax.py` minimax and negamax without any pruning, tests on sample tree
+    - `search_basics.py` Constants used by minimax programs
 - `alphabeta.py` Alphabeta algorithm, negamax style
-    - `alphabeta_test.py`
+    - `test_alphabeta.py`
     - `alphabeta_depth_limited.py` Version with limited search depth
-        - `alphabeta_depth_limited_tictactoe_test.py`
+        - `test_alphabeta_depth_limited_tictactoe.py`
 
-### Search enhancements: transposition table
+### NOT YET Search enhancements: transposition table
 - `transposition_table_simple.py` Python dictionary as Transposition Table
 - `boolean_negamax_tt.py` Boolean Negamax with Simple Transposition Table
     - `tic_tac_toe_solve_with_tt.py` 
 
-### Counting the size of state spaces in tree and DAG model, solution trees
+### NOT YET Counting the size of state spaces in tree and DAG model, solution trees
 - `tic_tac_toe_estimate_tree.py` 
 - `tic_tac_toe_count_tree.py` 
 - `tic_tac_toe_count_dag.py` 
