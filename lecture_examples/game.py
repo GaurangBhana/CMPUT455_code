@@ -7,6 +7,7 @@
 # Written by Martin Mueller.
 
 from abc import ABC, abstractmethod
+from typing import List
 from game_basics import BLACK, opponent, Color, WinnerColor
 
 class Game(ABC):
@@ -16,7 +17,7 @@ class Game(ABC):
 
     def reset_game(self) -> None:
         self.to_play: Color = BLACK
-        self.moves: list[int] = []
+        self.moves: List[int] = []
 
     def switch_to_play(self) -> None:
         self.to_play = opponent(self.to_play)
@@ -38,10 +39,10 @@ class Game(ABC):
         pass
 
     @abstractmethod
-    def legal_moves(self) -> list[int]:
+    def legal_moves(self) -> List[int]:
         pass
 
-    def play(self, move: int)-> bool:
+    def play(self, move: int) -> bool:
         """Returns True if the move was legal and could be played.
             If it returns False, the game state is unchanged.
         """
@@ -80,3 +81,10 @@ class Game(ABC):
            Evaluate from to_play's point of view.
         """
         pass
+    
+    def int_eval_for_color(self, color: Color) -> int:
+        """
+           Evaluate from black player's point of view.
+           Used only in plain boolean minimax.
+        """
+        return self.int_eval() if self.to_play == BLACK else -self.int_eval()
