@@ -7,7 +7,7 @@ from negamax_boolean import negamax_boolean_timed
 # An example game, with some mistakes by both. 
 # Call solve after every move to check whether Black can win
 def solve_boolean_tic_tac_toe(solver: MinimaxTimedFunction, 
-            verbose: bool, negamax: bool):
+            verbose: bool, negamax: bool) -> None:
     t = TicTacToe()
     t.set_draw_winner(WHITE)
     solve_boolean(t, solver, verbose, negamax, False)
