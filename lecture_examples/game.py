@@ -88,3 +88,9 @@ class Game(ABC):
            Used only in plain boolean minimax.
         """
         return self.int_eval() if self.to_play == BLACK else -self.int_eval()
+
+    @abstractmethod
+    def code(self) -> int:
+        """Heuristic or exact hash code.
+        """
+        pass

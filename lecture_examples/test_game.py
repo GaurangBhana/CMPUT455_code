@@ -26,6 +26,10 @@ class Game0(Game):
 
     def int_eval(self) -> int:
         raise NotImplementedError
+
+    def code(self) -> int:
+        raise NotImplementedError
+
 #----------------------------------------------------------
 
 def assert_is_initial_state(game: Game0) -> None:

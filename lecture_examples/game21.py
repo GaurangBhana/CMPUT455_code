@@ -44,11 +44,15 @@ class Game21(Game):
         super().undo_move()
 
     def boolean_eval(self) -> bool:
-        """Implement if your game allows a boolean evaluation.
-           Evaluate from to_play's point of view.
+        """Evaluate from to_play's point of view.
         """
         assert self.end_of_game()
         return False
 
     def int_eval(self) -> int:
         assert False # not implemented
+
+    def code(self) -> int:
+        """Encode state into unique integer code
+        """
+        return 2 * self.num_tokens + self.to_play

@@ -57,3 +57,6 @@ class SampleTree(Game):
 
     def __str__(self) -> str:
         return f"{self.current}"
+    
+    def code(self) -> int:
+        raise NotImplementedError
