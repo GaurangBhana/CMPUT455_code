@@ -1,5 +1,6 @@
 # Test all code that can run without user input
 import demere
+import ev
 import fold_or_bid
 import solve_minimax_game21
 import solve_negamax_game21
@@ -14,6 +15,7 @@ import solve_boolean_tic_tac_toe
 def test_all() -> None:
     demere.test_demere()
     fold_or_bid.run_fold_or_bid(100)
+    ev.test_ev_all()
     test_game_basics.test_game_basics()
     test_game.test_game()
     test_game21.test_game21()
@@ -22,6 +24,5 @@ def test_all() -> None:
     solve_negamax_game21.test_solve_game21(21)
     solve_minimax_game21.test_solve_minimax_game21(21)
     solve_boolean_tic_tac_toe.test()
-
 
 test_all()
