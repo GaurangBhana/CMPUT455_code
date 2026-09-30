@@ -51,7 +51,7 @@ artificial DAG
 - `negamax_boolean.py` negamax reformulation of minimax - from `to_play`'s point of view
 - `solve_minimax_game21.py`, `solve_negamax_game21.py` Solve Game21 with minimax and negamax
 - `solve_boolean.py` Call a boolean solver for a game
-    - `solve_boolean_tictactoe.py` - "solve" TicTacToe with a boolean question - can Black win, or can Black not win?
+    - `solve_boolean_tic_tac_toe.py` - "solve" TicTacToe with a boolean question - can Black win, or can Black not win?
 - **New Sep 25, from class** `shortcut_eval.py` Shows analogy between cutoffs in boolean minimax, and shortcut evaluation in programming languages
 
 ## Quiz extras (optional) 
@@ -61,25 +61,31 @@ In `lecture_examples/quiz_extras`
 
 ## Lectures 9 - 10, Minimax Search and Alphabeta
 
+### Search with bounds for games with three outcomes (win-draw-loss)
+`negamax_3outcome.py` Check if a given player can win, count all draws as win for opponent
+`test_negamax_3outcome.py` Call `negamax_3outcome.py` solver and print results
+`test_negamax_3outcome_tictactoe.py` Solve some Tic Tac Toe positions and check result
+
 ### Minimax with integer values, Alphabeta algorithm
 - `sample_tree.py`, `sample_tree_data.py` artificial game tree to illustrate minimax and alphabeta
 - `naive_minimax.py`, `naive_negamax.py`, `test_naive_minimax_negamax.py` minimax and negamax without any pruning, tests on sample tree
     - `search_basics.py` Constants used by minimax programs
 - `alphabeta.py` Alphabeta algorithm, negamax style
-    - `test_alphabeta.py`
+    - `test_alphabeta.py` Alphabeta on artificial tree
+    - `test_alphabeta_tictactoe.py` Compare alphabeta and naive negamax in Tic Tac Toe
     - `alphabeta_depth_limited.py` Version with limited search depth
         - `test_alphabeta_depth_limited_tictactoe.py`
 
-### NOT YET Search enhancements: transposition table
+### Search enhancements: transposition table
 - `transposition_table_simple.py` Python dictionary as Transposition Table
-- `boolean_negamax_tt.py` Boolean Negamax with Simple Transposition Table
-    - `tic_tac_toe_solve_with_tt.py` 
+- `negamax_boolean_tt.py` Boolean Negamax with Simple Transposition Table
+    - `solve_with_tt_tic_tac_toe.py` Solve Tic Tac Toe as a draw with two boolean searches as in Lecture 9
+    - `solve_negamax_tt_game21.py` Solve Game21 up to 1000 tokens instantly
 
-### NOT YET Counting the size of state spaces in tree and DAG model, solution trees
-- `tic_tac_toe_estimate_tree.py` 
-- `tic_tac_toe_count_tree.py` 
-- `tic_tac_toe_count_dag.py` 
-- `tic_tac_toe_solve_all.py` Solve All TicTacToe States
+### Counting the size of state spaces in tree and DAG model, solution trees
+- `tic_tac_toe_estimate_tree.py` Simple tree model estimate
+- `tic_tac_toe_count.py` Count states in tree and DAG models
+- `tic_tac_toe_solve_all.py` Solve All TicTacToe States in tree and DAG models
 
 ## Other
 - `test_all.py` Run all unit tests. Also tests some other functions
