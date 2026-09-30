@@ -2,7 +2,7 @@ from game_basics import WHITE
 from tic_tac_toe import TicTacToe
 from solve_boolean import MinimaxTimedFunction, solve_boolean
 from minimax_boolean import minimax_boolean_timed
-from negamax_boolean import negamax_boolean_timed
+from negamax_boolean import negamax_timed
 
 # An example game, with some mistakes by both. 
 # Call solve after every move to check whether Black can win
@@ -34,7 +34,7 @@ def test(verbose: bool = False) -> None:
     if verbose: print("Test minimax:")
     solve_boolean_tic_tac_toe(minimax_boolean_timed, verbose, negamax=False)
     if verbose: print("Test negamax:")
-    solve_boolean_tic_tac_toe(negamax_boolean_timed, verbose, negamax=True)
+    solve_boolean_tic_tac_toe(negamax_timed, verbose, negamax=True)
 
 if __name__ == "__main__":
     test(verbose = True)

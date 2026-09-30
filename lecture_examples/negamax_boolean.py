@@ -6,21 +6,21 @@ import time
 from typing import List, Tuple
 from game import Game
 
-def negamax_boolean(game: Game) -> bool:
+def negamax(game: Game) -> bool:
     """Does the current player (game.to_play) win with best play by both?"""
     if game.end_of_game():
         return game.boolean_eval()
     for m in game.legal_moves():
         game.play(m)
-        success: bool = not negamax_boolean(game)
+        success: bool = not negamax(game)
         game.undo_move()
         if success:
             return True
     return False
 
-def negamax_boolean_timed(game: Game) -> Tuple[bool, float]:
+def negamax_timed(game: Game) -> Tuple[bool, float]:
     start: float = time.process_time()
-    is_win: bool = negamax_boolean(game)
+    is_win: bool = negamax(game)
     time_used: float = time.process_time() - start
     return is_win, time_used
 
@@ -30,7 +30,7 @@ def find_all_winning_moves(game: Game) -> list[int]:
     wins: List[int] = []
     for m in game.legal_moves():
         game.play(m)
-        success: bool = not negamax_boolean(game)
+        success: bool = not negamax(game)
         game.undo_move()
         if success:
             wins.append(m)
