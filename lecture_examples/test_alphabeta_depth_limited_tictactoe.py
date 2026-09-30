@@ -4,7 +4,6 @@
 # Written by Martin Mueller
 
 import time
-from typing import Callable, Any, Tuple
 from alphabeta_depth_limited import call_alphabeta_depth_limited, DepthLimitedSearchFunction
 from tic_tac_toe import TicTacToe
 
