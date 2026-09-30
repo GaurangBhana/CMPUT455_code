@@ -2,6 +2,7 @@
 # Alphabeta algorithm, depth-limited
 # Written by Martin Mueller
 
+from typing import Callable
 from search_basics import INFINITY
 from game import Game
 
@@ -18,6 +19,10 @@ def alphabeta_depth_limited(state: Game, alpha: int, beta: int, depth: int) -> i
         if value >= beta: 
             return beta   # or value in failsoft (later)
     return alpha
+
+
+# Type alias for a depth-limited search function
+DepthLimitedSearchFunction = Callable[[Game, int], int]
 
 # initial call with full window
 def call_alphabeta_depth_limited(root_state: Game, depth: int) -> int:

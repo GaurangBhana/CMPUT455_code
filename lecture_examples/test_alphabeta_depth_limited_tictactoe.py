@@ -5,19 +5,19 @@
 
 import time
 from typing import Callable, Any, Tuple
-from alphabeta_depth_limited import call_alphabeta_depth_limited
+from alphabeta_depth_limited import call_alphabeta_depth_limited, DepthLimitedSearchFunction
 from tic_tac_toe import TicTacToe
 
 MAX_DEPTH_TIC_TAC_TOE: int = 11 # more than deep enough, 9 moves max.
 
 def time_search(
     name: str,
-    search,
+    search: DepthLimitedSearchFunction,
     root: TicTacToe,
     depth: int
 ) -> None:
     start: float = time.process_time()
-    result: Tuple[int, Any] = search(root, depth)
+    result: int = search(root, depth)
     time_used: float = time.process_time() - start
     print(f"{name} Depth {depth} Result {result} Time used: {time_used: .4f}")
 
