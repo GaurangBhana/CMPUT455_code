@@ -73,6 +73,7 @@ In `lecture_examples/quiz_extras`
 - `alphabeta.py` Alphabeta algorithm, negamax style
     - `test_alphabeta.py` Alphabeta on artificial tree
     - `test_alphabeta_tictactoe.py` Compare alphabeta and naive negamax in Tic Tac Toe
+    - `alphabeta_verbose.py`, `test_alphabeta_verbose.py` Negamax alphabeta, print each step
     - `alphabeta_depth_limited.py` Version with limited search depth
         - `test_alphabeta_depth_limited_tictactoe.py`
 
@@ -88,9 +89,7 @@ In `lecture_examples/quiz_extras`
 - `tic_tac_toe_solve_all.py` Solve All TicTacToe States in tree and DAG models
 
 ## Other
-- `test_all.py` Run all unit tests. Also tests some other functions
-that do not need human input
-
+- `test_all.py` Run all unit tests, and test some other functions
 
 ## (For future lectures)
 
@@ -103,3 +102,5 @@ that do not need human input
 - `bernoulli.py` Run repeated Bernoulli experiment
 - `bernoulli_mystery.py` Guess the unknown parameter p of a repeated Bernoulli experiment
 
+### (Lecture Neural Nets)
+- `nn.py`, `nn3.py` Small nets with one and two hidden layers; examples
